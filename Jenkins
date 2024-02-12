@@ -61,10 +61,6 @@ pipeline{
 }
 post {
 
-
-        always{
-            junit 'target/surefire-reports/TEST-CalculatorTest.xml'
-        }
         failure{
              emailext (
               to: 'deepanjalighosh2017@gmail.com',
@@ -75,6 +71,15 @@ post {
                
         }
       success{
+             emailext (
+              to: 'deepanjalighosh2017@gmail.com',
+              subject: "Build success",
+              body: "Calculator build success"
+      
+                )
+               
+        }
+     changed{
              emailext (
               to: 'deepanjalighosh2017@gmail.com',
               subject: "Build success",
