@@ -6,7 +6,15 @@ pipeline{
             steps{
                 git url: "https://github.com/DB4558/Calculator.git" ,branch:"master"
             }
+        
         }
+     stage("Pre Build")
+        {
+            steps{
+              sh "docker container prune"
+            }
+        }
+        
         stage("Build Maven")
         {
             steps{
