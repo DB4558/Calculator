@@ -63,7 +63,7 @@ pipeline{
 
 
         always{
-            junit /src/test/java/CalculatorTest.java
+            junit '/target/surefire-reports/TEST-CalculatorTest.xml'
         }
         failure{
              emailext (
