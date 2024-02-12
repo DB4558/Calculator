@@ -60,6 +60,11 @@ pipeline{
         }
 }
         post {
+
+
+        always{
+            junit /src/test/java/CalculatorTest.java
+        }
         failure{
              emailext (
       to: 'deepanjalighosh2017@gmail.com',
