@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: calculator-java:latest
+    volumes:
+      - /home/deep4558/Desktop/volume/calc-volume:/app
