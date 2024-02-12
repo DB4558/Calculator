@@ -81,18 +81,18 @@ public class Calculator {
 
     public static double performAddition(double num1, double num2) {
         double result = num1 + num2;
-        System.out.println("Result: " + result);
+        System.out.println("Addition of "+num1+"and"+num2+"is:" + result);
         return result;
     }
     public static double performSubtraction(double num1, double num2) {
         double result = num1 - num2;
-        System.out.println("Result: " + result);
+        System.out.println("Subtraction of"+num1+"and"+num2+"is:" + result);
         return result;
     }
 
     public static double performMultiplication(double num1, double num2) {
         double result = num1 * num2;
-        System.out.println("Result: " + result);
+        System.out.println("Multiplication of"+num1+"and"+num2+"is:" + result);
         return result;
     }
 
@@ -100,7 +100,7 @@ public class Calculator {
         double result = 0;
         if (num2 != 0) {
             result = num1 / num2;
-            System.out.println("Result: " + result);
+            System.out.println("Division of "+num1+"and"+num2+"is:" + result);
         } else {
             System.out.println("Error! Division by zero is not allowed.");
         }
@@ -111,7 +111,7 @@ public class Calculator {
             throw new IllegalArgumentException("Input must be greater than 0");
         }
         double result= Math.log(x);
-        System.out.println("Result: " + result);
+        System.out.println("Result of Log Of "+x+"is:" + result);
         return result;
     }
 
@@ -141,7 +141,7 @@ public class Calculator {
 
     public static double performPower(double base, double exponent) {
         double result = Math.pow(base, exponent);
-        System.out.println("Result: " + result);
+        System.out.println("Power: " + result);
         return result;
     }
 }
