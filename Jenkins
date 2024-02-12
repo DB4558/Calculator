@@ -83,7 +83,7 @@ post {
              emailext (
               to: 'deepanjalighosh2017@gmail.com',
               subject: "Build success",
-              body: "Calculator build success"
+              body: "Calculator build status changed"
       
                 )
                
