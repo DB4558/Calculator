@@ -16,7 +16,7 @@ pipeline{
         stage("Build and Test")
         {
             steps{
-                sh "docker-compose build"
+                sh "docker-compose down && docker-compose up"
             }
         }
         stage("push to Dockerhub")
