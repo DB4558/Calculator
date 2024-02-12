@@ -59,28 +59,28 @@ pipeline{
             }
         }
 }
-        post {
+post {
 
 
         always{
-            junit '/target/surefire-reports/TEST-CalculatorTest.xml'
+            junit 'target/surefire-reports/TEST-CalculatorTest.xml'
         }
         failure{
              emailext (
-      to: 'deepanjalighosh2017@gmail.com',
-      subject: "Build failed",
-      body: "Calculator build failed"
+              to: 'deepanjalighosh2017@gmail.com',
+              subject: "Build failed",
+              body: "Calculator build failed"
       
-    )
+            )
                
         }
-  success{
+      success{
              emailext (
-      to: 'deepanjalighosh2017@gmail.com',
-      subject: "Build success",
-      body: "Calculator build success"
+              to: 'deepanjalighosh2017@gmail.com',
+              subject: "Build success",
+              body: "Calculator build success"
       
-    )
+                )
                
         }
     }
