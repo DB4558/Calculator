@@ -4,7 +4,7 @@ pipeline{
         stage("Code")
         {
             steps{
-                git url: "https://github.com/DG4558/Calculator.git" ,branch:"master"
+                git url: "https://github.com/DB4558/Calculator.git" ,branch:"master"
             }
         }
         stage("Build Maven")
@@ -16,7 +16,7 @@ pipeline{
         stage("Build and Test")
         {
             steps{
-                sh "docker build -t cal-java ."
+                sh "docker-compose build"
             }
         }
         stage("push to Dockerhub")
@@ -25,8 +25,8 @@ pipeline{
                 withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerpassword",usernameVariable:"dockerusername")]){
                     
                     sh "docker login -u ${env.dockerusername} -p ${env.dockerpassword}"
-                    sh "docker tag cal-java  ${env.dockerusername}/cal-java"
-                    sh "docker push ${env.dockerusername}/cal-java"
+                    sh "docker tag calculator-java  ${env.dockerusername}/calculator-java"
+                    sh "docker push ${env.dockerusername}/calculator-java"
                     
                 }
             }
@@ -46,6 +46,15 @@ pipeline{
 }
         post {
         failure{
+             emailext (
+      to: 'deepanjalighosh2017@gmail.com',
+      subject: "Build failed",
+      body: "Calculator build failed"
+      
+    )
+               
+        }
+  success{
              emailext (
       to: 'deepanjalighosh2017@gmail.com',
       subject: "Build failed",
