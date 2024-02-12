@@ -11,7 +11,7 @@ pipeline{
      stage("Pre Build")
         {
             steps{
-              sh "docker rm calculator-java"
+              sh "docker container prune"
             }
         }
         
