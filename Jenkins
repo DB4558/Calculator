@@ -10,9 +10,16 @@ pipeline{
         }
      stage("Pre Build")
         {
-            steps{
-              sh "docker container prune --force"
+            steps {
+        script {
+            def containerExists = sh(script: "docker ps -a --filter name=calculator-java --format '{{.Names}}'", returnStatus: true) == 0
+            if (containerExists) {
+                sh "docker rm -f calculator-java"
+            } else {
+                echo "Container does not exist."
             }
+        }
+    }
         }
         
         stage("Build Maven")
