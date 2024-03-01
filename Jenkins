@@ -22,13 +22,13 @@ pipeline{
     }
         }
         
-        stage("Build Maven")
+        stage("Build Maven and Test")
         {
             steps{
               sh "mvn clean install"
             }
         }
-        stage("Build and Test")
+        stage("Build Docker Image")
         {
             steps{
                 sh "docker-compose build"
