@@ -14,7 +14,8 @@ This Calculator Maven Project is designed to perform basic mathematical operatio
 ## Local Setup
 Clone the repository to your local machine:
 
-git clone https://github.com/your-username/calculator-maven-project.git
+git clone https://github.com/DB4558/Calculator.git
+
 cd calculator-maven-project
 
 Building the Project
