@@ -13,7 +13,7 @@ This Calculator Maven Project is designed to perform basic mathematical operatio
 
 ## Local Setup
 Clone the repository to your local machine:
-```bash
+
 git clone https://github.com/your-username/calculator-maven-project.git
 cd calculator-maven-project
 
@@ -21,15 +21,11 @@ Building the Project
 
 To build the project and run tests, execute:
 
-bash
-
 mvn clean install
 
 Running the Application
 
 To run the application on your local machine using Docker Compose:
-
-bash
 
 docker-compose up --build
 
@@ -63,10 +59,8 @@ Testing
 
 Tests are written using JUnit and can be executed through Maven by:
 
-bash
 
 mvn test
 
-Contributing
 
-Contributions are welcome! Please fork the repository and create a pull request for any enhancements.
+
